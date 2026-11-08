@@ -12,12 +12,22 @@
 <body>
 <div class="layout">
   <aside class="sidebar" id="sidebar">
+
     <div class="brand">
-      <div class="brand-logo">A<span>+</span></div>
-      <div><b>ATLANTIQUE</b><small>BIBLIOTHÈQUE</small></div>
+      <img
+        src="./logo-atlantique-2.png"
+        alt="Logo du Collège privé Atlantique 2"
+        class="brand-logo"
+      >
+      <div class="brand-text">
+        <b>ATLANTIQUE</b>
+        <small>BIBLIOTHÈQUE</small>
+        <span>COLLÈGE PRIVÉ ATLANTIQUE 2</span>
+      </div>
     </div>
 
     <p class="nav-caption">MENU PRINCIPAL</p>
+
     <nav>
       <button class="nav-link active" data-page="dashboard"><span>▦</span> Tableau de bord</button>
       <button class="nav-link" data-page="books"><span>▤</span> Catalogue des livres</button>
@@ -28,8 +38,14 @@
     </nav>
 
     <div class="sidebar-bottom">
-      <div class="online-status"><i></i><span id="network-status">Application prête</span></div>
-      <div class="school-name"><b>Collège privé</b><small>Atlantique 2 · Yopougon</small></div>
+      <div class="online-status">
+        <i></i>
+        <span id="network-status">Application prête</span>
+      </div>
+      <div class="school-name">
+        <b>Collège privé</b>
+        <small>Atlantique 2 · Yopougon</small>
+      </div>
     </div>
   </aside>
 
@@ -37,28 +53,61 @@
     <header class="topbar">
       <button class="mobile-menu" id="menu-toggle" aria-label="Ouvrir le menu">☰</button>
       <div class="crumb">Bibliothèque <span>/</span> <b id="page-title">Tableau de bord</b></div>
-      <div class="top-user"><div class="avatar">B</div><div><b>Bibliothécaire</b><small>Poste de gestion</small></div></div>
+      <div class="top-user">
+        <div class="avatar">B</div>
+        <div><b>Bibliothécaire</b><small>Poste de gestion</small></div>
+      </div>
     </header>
 
     <div class="content">
+
       <section class="page active" id="page-dashboard">
         <div class="page-heading">
-          <div><p class="eyebrow">ESPACE DE GESTION</p><h1>Tableau de bord</h1><p class="subheading">Vue générale de votre bibliothèque.</p></div>
+          <div>
+            <p class="eyebrow">ESPACE DE GESTION</p>
+            <h1>Tableau de bord</h1>
+            <p class="subheading">Vue générale de votre bibliothèque.</p>
+          </div>
           <button class="primary-btn" data-action="new-loan">＋ Nouvel emprunt</button>
         </div>
 
         <div class="stats">
-          <article class="stat"><div class="stat-label">Exemplaires au total <span class="stat-icon blue">▤</span></div><strong id="stat-copies">0</strong><small>Dans le catalogue</small></article>
-          <article class="stat"><div class="stat-label">Livres disponibles <span class="stat-icon green">✓</span></div><strong id="stat-available">0</strong><small>Peuvent être empruntés</small></article>
-          <article class="stat"><div class="stat-label">Lecteurs inscrits <span class="stat-icon purple">♙</span></div><strong id="stat-readers">0</strong><small>Élèves enregistrés</small></article>
-          <article class="stat"><div class="stat-label">Emprunts en cours <span class="stat-icon orange">⇄</span></div><strong id="stat-active">0</strong><small id="stat-late-label">0 en retard</small></article>
+          <article class="stat">
+            <div class="stat-label">Exemplaires au total <span class="stat-icon blue">▤</span></div>
+            <strong id="stat-copies">0</strong>
+            <small>Dans le catalogue</small>
+          </article>
+          <article class="stat">
+            <div class="stat-label">Livres disponibles <span class="stat-icon green">✓</span></div>
+            <strong id="stat-available">0</strong>
+            <small>Peuvent être empruntés</small>
+          </article>
+          <article class="stat">
+            <div class="stat-label">Lecteurs inscrits <span class="stat-icon purple">♙</span></div>
+            <strong id="stat-readers">0</strong>
+            <small>Élèves enregistrés</small>
+          </article>
+          <article class="stat">
+            <div class="stat-label">Emprunts en cours <span class="stat-icon orange">⇄</span></div>
+            <strong id="stat-active">0</strong>
+            <small id="stat-late-label">0 en retard</small>
+          </article>
         </div>
 
         <div class="dashboard-grid">
           <article class="panel">
-            <div class="panel-head"><div><h2>Emprunts récents</h2><p>Dernières opérations enregistrées</p></div><button class="link-btn" data-goto="loans">Tout voir →</button></div>
-            <div class="table-scroll"><table><thead><tr><th>LIVRE</th><th>LECTEUR</th><th>ÉCHÉANCE</th><th>ÉTAT</th></tr></thead><tbody id="recent-table"></tbody></table></div>
+            <div class="panel-head">
+              <div><h2>Emprunts récents</h2><p>Dernières opérations enregistrées</p></div>
+              <button class="link-btn" data-goto="loans">Tout voir →</button>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>LIVRE</th><th>LECTEUR</th><th>ÉCHÉANCE</th><th>ÉTAT</th></tr></thead>
+                <tbody id="recent-table"></tbody>
+              </table>
+            </div>
           </article>
+
           <article class="panel shortcuts">
             <div class="panel-head"><div><h2>Actions rapides</h2><p>Gagnez du temps</p></div></div>
             <button class="shortcut" data-action="new-book"><span class="shortcut-icon blue">＋</span><span><b>Ajouter un livre</b><small>Enregistrer un ouvrage</small></span><i>›</i></button>
@@ -67,59 +116,144 @@
             <button class="shortcut" data-goto="settings"><span class="shortcut-icon orange">⇧</span><span><b>Sauvegarder</b><small>Protéger vos données</small></span><i>›</i></button>
           </article>
         </div>
-        <div class="notice"><b>ⓘ À retenir</b><p>Les données sont enregistrées sur cet appareil. Pensez à télécharger régulièrement une sauvegarde depuis les paramètres.</p></div>
+
+        <div class="notice">
+          <b>ⓘ À retenir</b>
+          <p>Les données sont enregistrées sur cet appareil. Pensez à télécharger régulièrement une sauvegarde depuis les paramètres.</p>
+        </div>
       </section>
 
       <section class="page" id="page-books">
-        <div class="page-heading"><div><p class="eyebrow">COLLECTION</p><h1>Catalogue des livres</h1><p class="subheading">Enregistrez et gérez les ouvrages de la bibliothèque.</p></div><button class="primary-btn" data-action="new-book">＋ Ajouter un livre</button></div>
-        <div class="toolbar"><input class="search" id="book-search" placeholder="Rechercher un titre, un auteur, un ISBN..."><span class="count" id="books-count">0 livre</span></div>
-        <article class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>TITRE</th><th>AUTEUR</th><th>CATÉGORIE</th><th>ISBN</th><th>EXEMPLAIRES</th><th>DISPONIBLES</th><th>ACTIONS</th></tr></thead><tbody id="books-table"></tbody></table></div></article>
+        <div class="page-heading">
+          <div><p class="eyebrow">COLLECTION</p><h1>Catalogue des livres</h1><p class="subheading">Enregistrez et gérez les ouvrages de la bibliothèque.</p></div>
+          <button class="primary-btn" data-action="new-book">＋ Ajouter un livre</button>
+        </div>
+        <div class="toolbar">
+          <input class="search" id="book-search" placeholder="Rechercher un titre, un auteur, un ISBN...">
+          <span class="count" id="books-count">0 livre</span>
+        </div>
+        <article class="panel table-panel">
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>TITRE</th><th>AUTEUR</th><th>CATÉGORIE</th><th>ISBN</th><th>EXEMPLAIRES</th><th>DISPONIBLES</th><th>ACTIONS</th></tr></thead>
+              <tbody id="books-table"></tbody>
+            </table>
+          </div>
+        </article>
       </section>
 
       <section class="page" id="page-readers">
-        <div class="page-heading"><div><p class="eyebrow">INSCRIPTIONS</p><h1>Lecteurs</h1><p class="subheading">Gérez les élèves inscrits à la bibliothèque.</p></div><button class="primary-btn" data-action="new-reader">＋ Ajouter un lecteur</button></div>
-        <div class="toolbar"><input class="search" id="reader-search" placeholder="Rechercher un nom, une classe ou un matricule..."><span class="count" id="readers-count">0 lecteur</span></div>
-        <article class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>NOM COMPLET</th><th>MATRICULE</th><th>CLASSE</th><th>CONTACT</th><th>ACTIONS</th></tr></thead><tbody id="readers-table"></tbody></table></div></article>
+        <div class="page-heading">
+          <div><p class="eyebrow">INSCRIPTIONS</p><h1>Lecteurs</h1><p class="subheading">Gérez les élèves inscrits à la bibliothèque.</p></div>
+          <button class="primary-btn" data-action="new-reader">＋ Ajouter un lecteur</button>
+        </div>
+        <div class="toolbar">
+          <input class="search" id="reader-search" placeholder="Rechercher un nom, une classe ou un matricule...">
+          <span class="count" id="readers-count">0 lecteur</span>
+        </div>
+        <article class="panel table-panel">
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>NOM COMPLET</th><th>MATRICULE</th><th>CLASSE</th><th>CONTACT</th><th>ACTIONS</th></tr></thead>
+              <tbody id="readers-table"></tbody>
+            </table>
+          </div>
+        </article>
       </section>
 
       <section class="page" id="page-loans">
-        <div class="page-heading"><div><p class="eyebrow">CIRCULATION</p><h1>Emprunts et retours</h1><p class="subheading">Suivez les livres sortis et les retours.</p></div><button class="primary-btn" data-action="new-loan">＋ Nouvel emprunt</button></div>
-        <div class="toolbar"><input class="search" id="loan-search" placeholder="Rechercher un livre ou un lecteur..."><select class="filter" id="loan-filter"><option value="all">Tous les emprunts</option><option value="active">En cours</option><option value="late">En retard</option><option value="returned">Retournés</option></select></div>
-        <article class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>LIVRE</th><th>LECTEUR</th><th>EMPRUNT</th><th>ÉCHÉANCE</th><th>RETOUR</th><th>ÉTAT</th><th>ACTION</th></tr></thead><tbody id="loans-table"></tbody></table></div></article>
+        <div class="page-heading">
+          <div><p class="eyebrow">CIRCULATION</p><h1>Emprunts et retours</h1><p class="subheading">Suivez les livres sortis et les retours.</p></div>
+          <button class="primary-btn" data-action="new-loan">＋ Nouvel emprunt</button>
+        </div>
+        <div class="toolbar">
+          <input class="search" id="loan-search" placeholder="Rechercher un livre ou un lecteur...">
+          <select class="filter" id="loan-filter">
+            <option value="all">Tous les emprunts</option>
+            <option value="active">En cours</option>
+            <option value="late">En retard</option>
+            <option value="returned">Retournés</option>
+          </select>
+        </div>
+        <article class="panel table-panel">
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>LIVRE</th><th>LECTEUR</th><th>EMPRUNT</th><th>ÉCHÉANCE</th><th>RETOUR</th><th>ÉTAT</th><th>ACTION</th></tr></thead>
+              <tbody id="loans-table"></tbody>
+            </table>
+          </div>
+        </article>
       </section>
 
       <section class="page" id="page-reports">
-        <div class="page-heading"><div><p class="eyebrow">ANALYSE</p><h1>Rapports</h1><p class="subheading">Indicateurs calculés à partir de vos enregistrements.</p></div></div>
+        <div class="page-heading">
+          <div><p class="eyebrow">ANALYSE</p><h1>Rapports</h1><p class="subheading">Indicateurs calculés à partir de vos enregistrements.</p></div>
+        </div>
         <div class="stats">
           <article class="stat"><div class="stat-label">Emprunts enregistrés</div><strong id="report-total">0</strong></article>
           <article class="stat"><div class="stat-label">Retours effectués</div><strong id="report-returned">0</strong></article>
           <article class="stat"><div class="stat-label">En circulation</div><strong id="report-active">0</strong></article>
           <article class="stat"><div class="stat-label">En retard</div><strong id="report-late">0</strong></article>
         </div>
-        <article class="panel report-panel"><div class="panel-head"><div><h2>État des collections</h2><p>Répartition des exemplaires</p></div></div><div id="collection-report"></div></article>
+        <article class="panel report-panel">
+          <div class="panel-head"><div><h2>État des collections</h2><p>Répartition des exemplaires</p></div></div>
+          <div id="collection-report"></div>
+        </article>
       </section>
 
       <section class="page" id="page-settings">
-        <div class="page-heading"><div><p class="eyebrow">GESTION DES DONNÉES</p><h1>Paramètres</h1><p class="subheading">Sauvegardez ou restaurez les informations de la bibliothèque.</p></div></div>
-        <div class="settings-grid">
-          <article class="panel setting-card"><div class="setting-icon blue">⇧</div><h2>Exporter une sauvegarde</h2><p>Téléchargez une copie de vos livres, lecteurs et emprunts.</p><button class="primary-btn" id="export-btn">Télécharger la sauvegarde</button></article>
-          <article class="panel setting-card"><div class="setting-icon purple">⇩</div><h2>Restaurer une sauvegarde</h2><p>Importez une sauvegarde JSON. Les données actuelles seront remplacées.</p><label class="secondary-btn file-btn">Choisir un fichier<input type="file" id="import-file" accept=".json,application/json"></label></article>
-          <article class="panel setting-card"><div class="setting-icon orange">⚠</div><h2>Réinitialiser les données</h2><p>Cette opération efface les données locales de l'application.</p><button class="danger-btn" id="reset-btn">Réinitialiser</button></article>
+        <div class="page-heading">
+          <div><p class="eyebrow">GESTION DES DONNÉES</p><h1>Paramètres</h1><p class="subheading">Sauvegardez ou restaurez les informations de la bibliothèque.</p></div>
         </div>
-        <div class="notice"><b>Important pour la sécurité</b><p>Les données restent dans le navigateur de cet appareil. Elles ne sont pas automatiquement envoyées sur Internet. Faites des sauvegardes régulières et conservez-les dans un endroit sûr.</p></div>
+        <div class="settings-grid">
+          <article class="panel setting-card">
+            <div class="setting-icon blue">⇧</div>
+            <h2>Exporter une sauvegarde</h2>
+            <p>Téléchargez une copie de vos livres, lecteurs et emprunts.</p>
+            <button class="primary-btn" id="export-btn">Télécharger la sauvegarde</button>
+          </article>
+          <article class="panel setting-card">
+            <div class="setting-icon purple">⇩</div>
+            <h2>Restaurer une sauvegarde</h2>
+            <p>Importez une sauvegarde JSON. Les données actuelles seront remplacées.</p>
+            <label class="secondary-btn file-btn">Choisir un fichier<input type="file" id="import-file" accept=".json,application/json"></label>
+          </article>
+          <article class="panel setting-card">
+            <div class="setting-icon orange">⚠</div>
+            <h2>Réinitialiser les données</h2>
+            <p>Cette opération efface les données locales de l'application.</p>
+            <button class="danger-btn" id="reset-btn">Réinitialiser</button>
+          </article>
+        </div>
+        <div class="notice">
+          <b>Important pour la sécurité</b>
+          <p>Les données restent dans le navigateur de cet appareil. Elles ne sont pas automatiquement envoyées sur Internet. Faites des sauvegardes régulières et conservez-les dans un endroit sûr.</p>
+        </div>
         <p class="storage-info" id="storage-info">Stockage local : vérification…</p>
       </section>
+
     </div>
+
     <footer>ATLANTIQUE BIBLIOTHÈQUE <span>·</span> Collège privé Atlantique 2 <span>·</span> Version 1.0</footer>
   </main>
 </div>
 
 <div class="modal-layer" id="modal-layer">
   <div class="modal">
-    <div class="modal-head"><div><p class="eyebrow">FORMULAIRE</p><h2 id="modal-title">Nouvel enregistrement</h2></div><button class="close-modal" id="close-modal">×</button></div>
-    <form id="record-form"><div id="form-fields" class="form-fields"></div><div class="modal-actions"><button type="button" class="secondary-btn" id="cancel-modal">Annuler</button><button type="submit" class="primary-btn">Enregistrer</button></div></form>
+    <div class="modal-head">
+      <div><p class="eyebrow">FORMULAIRE</p><h2 id="modal-title">Nouvel enregistrement</h2></div>
+      <button class="close-modal" id="close-modal">×</button>
+    </div>
+    <form id="record-form">
+      <div id="form-fields" class="form-fields"></div>
+      <div class="modal-actions">
+        <button type="button" class="secondary-btn" id="cancel-modal">Annuler</button>
+        <button type="submit" class="primary-btn">Enregistrer</button>
+      </div>
+    </form>
   </div>
 </div>
+
 <div class="toast" id="toast"></div>
 <script src="app.js"></script>
 </body>
