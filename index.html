@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#142d50">
+  <title>Atlantique Bibliothèque</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-icon">📚</div>
+      <div>
+        <h2>ATLANTIQUE</h2>
+        <span>BIBLIOTHÈQUE</span>
+      </div>
+    </div>
+
+    <div class="menu-label">MENU PRINCIPAL</div>
+    <nav>
+      <button class="nav-link active" data-page="dashboard">▦ Tableau de bord</button>
+      <button class="nav-link" data-page="books">▤ Catalogue des livres</button>
+      <button class="nav-link" data-page="students">♙ Lecteurs</button>
+      <button class="nav-link" data-page="loans">⇧ Emprunts</button>
+      <button class="nav-link" data-page="returns">↩ Retours</button>
+      <button class="nav-link" data-page="reports">▥ Rapports</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button class="nav-link" data-page="settings">⚙ Paramètres</button>
+      <div class="school-name">Collège privé Atlantique 2</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <div>
+        <strong>ATLANTIQUE BIBLIOTHÈQUE</strong>
+        <small>Gestion de la bibliothèque scolaire</small>
+      </div>
+      <div class="user-avatar">A</div>
+    </header>
+
+    <section class="content">
+      <div class="welcome">
+        <div>
+          <p class="eyebrow">ESPACE DE GESTION</p>
+          <h1 id="pageTitle">Tableau de bord</h1>
+          <p id="pageDescription">Vue générale de votre bibliothèque.</p>
+        </div>
+        <span class="status">● Interface initiale</span>
+      </div>
+
+      <div id="pageContent">
+        <div class="stats">
+          <article class="stat-card">
+            <span>📚</span>
+            <p>Total des livres</p>
+            <h2>—</h2>
+            <small>En attente de connexion</small>
+          </article>
+          <article class="stat-card">
+            <span>✓</span>
+            <p>Livres disponibles</p>
+            <h2>—</h2>
+            <small>En attente de connexion</small>
+          </article>
+          <article class="stat-card">
+            <span>⇧</span>
+            <p>Emprunts en cours</p>
+            <h2>—</h2>
+            <small>En attente de connexion</small>
+          </article>
+          <article class="stat-card">
+            <span>◷</span>
+            <p>Retards</p>
+            <h2>—</h2>
+            <small>En attente de connexion</small>
+          </article>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Bienvenue dans votre bibliothèque</h3>
+              <p>Votre espace central de gestion.</p>
+            </div>
+          </div>
+          <div class="welcome-box">
+            <div class="welcome-icon">📖</div>
+            <h2>Une bibliothèque mieux organisée.</h2>
+            <p>
+              Gérez le catalogue, les lecteurs, les emprunts
+              et les retours depuis une seule application.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
