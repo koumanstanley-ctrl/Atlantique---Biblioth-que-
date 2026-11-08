@@ -1,13 +1,15 @@
 "use strict";
 
-const CACHE_NAME = "atlantique-bibliotheque-v1";
+const CACHE_NAME = "atlantique-bibliotheque-v2";
+
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
   "./style.css",
   "./app.js",
   "./manifest.json",
-  "./icon.svg"
+  "./icon.svg",
+  "./logo-atlantique-2.png"
 ];
 
 self.addEventListener("install", event => {
@@ -22,7 +24,8 @@ self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
-        keys.filter(key => key !== CACHE_NAME)
+        keys
+          .filter(key => key !== CACHE_NAME)
           .map(key => caches.delete(key))
       )
     ).then(() => self.clients.claim())
@@ -37,10 +40,15 @@ self.addEventListener("fetch", event => {
       if (cached) return cached;
 
       return fetch(event.request).then(response => {
-        if (response && response.status === 200 &&
-            new URL(event.request.url).origin === self.location.origin) {
+        if (
+          response &&
+          response.status === 200 &&
+          new URL(event.request.url).origin === self.location.origin
+        ) {
           const copy = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, copy);
+          });
         }
         return response;
       }).catch(() => caches.match("./index.html"));
