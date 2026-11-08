@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'ci.atlantique.bibliotheque'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'ci.atlantique.bibliotheque'
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName '1.0.0'
+    }
+}
